@@ -15,7 +15,7 @@ const FeaturedProducts = () => {
   const [error, setError] = useState<string | null>(null);
 
   // ✅ Correct backend API URL
-  const API_URL = 'https://my-app-backend-3l4y.onrender.com/api/products';
+  const API_URL = 'https://acres-tech-store.onrender.com/api/products';
 
   useEffect(() => {
     const fetchProducts = async () => {
