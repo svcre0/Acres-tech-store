@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cash Spinner Design System - Premium Electronics Reseller
+Brand Colors: Charcoal Black, Cash Gold, Light Grey
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Cash Spinner Brand Colors */
+    --background: 0 0% 96%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    /* Primary: Charcoal Black */
+    --primary: 0 0% 10%;
+    --primary-foreground: 0 0% 96%;
+
+    /* Secondary: Light Grey */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Accent: Cash Gold */
+    --accent: 51 100% 50%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 51 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Premium Design Tokens */
+    --gold: 51 100% 50%;
+    --gold-light: 51 100% 65%;
+    --gold-dark: 51 100% 40%;
+    
+    --charcoal: 0 0% 10%;
+    --charcoal-light: 0 0% 15%;
+    --charcoal-lighter: 0 0% 25%;
+    
+    --surface: 0 0% 98%;
+    --surface-elevated: 0 0% 100%;
+    
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(51 100% 50%), hsl(51 100% 65%));
+    --gradient-charcoal: linear-gradient(135deg, hsl(0 0% 10%), hsl(0 0% 15%));
+    --gradient-premium: linear-gradient(135deg, hsl(0 0% 10%), hsl(51 100% 50%));
+    
+    /* Shadows */
+    --shadow-gold: 0 4px 20px hsl(51 100% 50% / 0.25);
+    --shadow-premium: 0 8px 32px hsl(0 0% 10% / 0.12);
+    --shadow-elevated: 0 2px 16px hsl(0 0% 10% / 0.08);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode: Charcoal background with gold accents */
+    --background: 0 0% 10%;
+    --foreground: 0 0% 96%;
+
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 51 100% 50%;
+    --primary-foreground: 0 0% 10%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 51 100% 50%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 51 100% 50%;
+    
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 51 100% 50%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 51 100% 50%;
+    
+    /* Dark mode gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(51 100% 50%), hsl(51 100% 65%));
+    --gradient-charcoal: linear-gradient(135deg, hsl(0 0% 8%), hsl(0 0% 15%));
+    --gradient-premium: linear-gradient(135deg, hsl(0 0% 8%), hsl(51 100% 50%));
+    
+    /* Dark mode shadows */
+    --shadow-gold: 0 4px 20px hsl(51 100% 50% / 0.4);
+    --shadow-premium: 0 8px 32px hsl(0 0% 0% / 0.5);
+    --shadow-elevated: 0 2px 16px hsl(0 0% 0% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  /* Cash Spinner Premium Components */
+  .spin-slow {
+    animation: spin 3s linear infinite;
+  }
+
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-premium);
+  }
+
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .gradient-charcoal {
+    background: var(--gradient-charcoal);
+  }
+
+  .gradient-premium {
+    background: var(--gradient-premium);
+  }
+
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
